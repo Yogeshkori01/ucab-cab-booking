@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    /* Greyscale dark background - not fully black (#18181b) */
+    background-color: #121214;
+    color: #e4e4e7;
+    @apply font-sans antialiased;
+  }
+  
+  /* Setting a base selection color for aesthetics */
+  ::selection {
+    background-color: #a1a1aa;
+    color: white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: #e4e4e7;
+    color: #18181b;
+    @apply font-bold py-2 px-4 rounded-xl shadow-[0_0_15px_rgba(255,255,255,0.1)] transition duration-300 ease-in-out transform hover:-translate-y-0.5;
+  }
+  .btn-primary:hover {
+    background-color: white;
+  }
+  .btn-secondary {
+    background-color: #27272a;
+    color: #f4f4f5;
+    border-color: #3f3f46;
+    @apply font-semibold py-2 px-4 border rounded-xl shadow-sm transition duration-300 ease-in-out;
+  }
+  .btn-secondary:hover {
+    background-color: #3f3f46;
+  }
+  .card {
+    background-color: #27272a;
+    border-color: #3f3f46;
+    @apply rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border p-6 transition-all duration-300;
+  }
+  .input-field {
+    background-color: rgba(39, 39, 42, 0.7);
+    border-color: #3f3f46;
+    color: #f4f4f5;
+    backdrop-filter: blur(8px);
+    @apply w-full text-sm rounded-xl border block p-3 transition-colors;
+  }
+  .input-field:focus {
+    --tw-ring-color: #a1a1aa;
+    border-color: #a1a1aa;
+    background-color: rgba(39, 39, 42, 0.9);
+    @apply ring-2 outline-none;
+  }
+  .input-field::placeholder {
+    color: #71717a;
+  }
+
+  /* Premium UI Effects */
+  .glass-panel {
+    background: rgba(24, 24, 27, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .glass-card {
+    background: linear-gradient(135deg, rgba(39, 39, 42, 0.8) 0%, rgba(24, 24, 27, 0.9) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(to right, #f4f4f5, #a1a1aa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-accent-glow {
+    text-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+  }
+}
+
+/* Custom scrollbar for better look in dark mode */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #121214; 
+}
+::-webkit-scrollbar-thumb {
+  background: #3f3f46; /* primary-700 */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #52525b; /* primary-600 */
+}
